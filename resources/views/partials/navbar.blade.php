@@ -26,17 +26,38 @@
                 🌙 / ☀️
             </button>
 
-            {{-- SIGN IN --}}
-            <a href="{{ route('signin') }}"
-                class="text-white hover:text-gray-300 text-sm">
-                SIGN IN
-            </a>
+            @auth
+                {{-- User is logged in - show profile and logout --}}
+                <div class="relative group">
+                    <button class="text-white hover:text-gray-300 text-sm flex items-center gap-2">
+                        👤 {{ auth()->user()->nama_lengkap ?? auth()->user()->username ?? 'Profile' }}
+                    </button>
+                    <div class="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profil Saya</a>
+                        <form method="POST" action="{{ route('logout') }}" class="block">
+                            @csrf
+                            <button type="submit" class="w-full text-left px-4 py-2 hover:bg-gray-100">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @endauth
 
-            {{-- LOGIN --}}
-            <a href="{{ route('login') }}"
-                class="bg-white text-gray-800 px-4 py-1 rounded-full text-sm shadow">
-                Log in
-            </a>
+            @guest
+                {{-- User is not logged in - show sign in and login --}}
+                {{-- SIGN IN --}}
+                <a href="{{ route('register')}}"
+                    class="text-white hover:text-gray-300 text-sm">
+                    SIGN IN
+                </a>
+
+                {{-- LOGIN --}}
+                <a href="{{ route('login') }}"
+                    class="bg-white text-gray-800 px-4 py-1 rounded-full text-sm shadow">
+                    Log in
+                </a>
+            @endguest
 
         </div>
 

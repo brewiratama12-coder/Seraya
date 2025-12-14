@@ -37,7 +37,7 @@
             <p class="text-gray-400 line-through text-sm">Rp. 1.000.000</p>
             <p class="text-lg font-semibold text-gray-800">Rp. 850.000</p>
 
-            <a href="{{ route('detail_produk') }}"
+            <a href="{{ route('detail_wedding') }}"
                class="inline-block mt-3 border border-gray-400 hover:bg-gray-100 transition px-4 py-2 rounded-lg text-sm">
                 Detail Produk
             </a>
@@ -66,9 +66,9 @@
             <p class="text-gray-400 line-through text-sm">Rp. 400.000</p>
             <p class="text-lg font-semibold text-gray-800">Rp. 350.000</p>
 
-            <a href="#"
+            <a href="{{ route('detail_private') }}"
                class="inline-block mt-3 border border-gray-400 hover:bg-gray-100 transition px-4 py-2 rounded-lg text-sm">
-                Check Out
+                Detail Produk
             </a>
         </div>
     </div>
@@ -95,9 +95,9 @@
             <p class="text-gray-400 line-through text-sm">Rp. 350.000</p>
             <p class="text-lg font-semibold text-gray-800">Rp. 250.000</p>
 
-            <a href="#"
+            <a href="{{ route('detail_open') }}"
             class="inline-block mt-3 border border-gray-400 hover:bg-gray-100 transition px-4 py-2 rounded-lg text-sm">
-                Check Out
+                Detail Produk
             </a>
         </div>
     </div>

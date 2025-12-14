@@ -18,13 +18,13 @@
         <!-- LEFT: IMAGE -->
         <div>
             <img src="{{ asset('image/bromo1.jpg') }}"
-                 class="w-full h-[430px] object-cover rounded-2xl shadow">
+            class="w-full h-[430px] object-cover rounded-2xl shadow">
         </div>
 
         <!-- RIGHT: INFO -->
         <div>
             <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-3">
-                Paket Wisata Bromo Sunrise
+                Paket Private Trip
             </h1>
 
             <!-- Rating -->
@@ -45,9 +45,7 @@
 
             <!-- Description -->
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                Nikmati keindahan sunrise di Gunung Bromo dengan perjalanan aman,
-                nyaman, dan didampingi driver berpengalaman.
-                Cocok untuk keluarga, pasangan, maupun solo traveler.
+                Rasakan perjalanan eksklusif dengan jadwal fleksibel, kenyamanan maksimal, dan layanan khusus sesuai kebutuhan Anda. Cocok untuk liburan keluarga atau pasangan.
             </p>
 
             <!-- Facilities -->
@@ -62,13 +60,13 @@
 
             <!-- CTA -->
             <div class="flex items-center gap-4 mt-4">
-                <a href="{{ route('booking') }}"
+                <a href="{{ route('pembayaran_private') }}"
                    class="bg-[#213555] text-white px-6 py-3 rounded-xl shadow hover:bg-[#1a2b44] transition">
                     Booking Sekarang
                 </a>
 
                 <a href="{{ route('hubungi_kami') }}"
-                   class="border border-gray-400 text-gray-800 dark:text-white px-6 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-700 transition">
+                class="border border-gray-400 text-gray-800 dark:text-white px-6 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-700 transition">
                     Hubungi Admin
                 </a>
             </div>
@@ -84,16 +82,11 @@
         </h2>
 
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-            Paket Wisata Bromo Sunrise merupakan salah satu paket perjalanan favorit.
-            Anda akan dijemput pada dini hari menuju Penanjakan untuk menikmati sunrise
-            terbaik di Indonesia. Setelah itu perjalanan menuju Kawah Bromo,
-            Lautan Pasir, dan Bukit Teletubbies.
+            Paket Wisata Private Trip dirancang khusus untuk Anda yang mengutamakan kenyamanan, privasi, serta fleksibilitas dalam perjalanan. Anda akan menikmati perjalanan wisata bersama keluarga, pasangan, atau teman terdekat tanpa digabung dengan peserta lain. Waktu keberangkatan, rute perjalanan, serta aktivitas dapat disesuaikan dengan kebutuhan dan preferensi Anda.
         </p>
 
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Trip ini sangat cocok bagi Anda yang ingin menikmati keindahan alam
-            dengan pelayanan profesional dan aman. Kami menyediakan fasilitas terbaik
-            untuk menjamin kenyamanan perjalanan Anda.
+           Guides dan tim profesional kami akan selalu mendampingi untuk menjamin keamanan serta kenyamanan aktivitas wisata Anda. Paket ini sangat cocok bagi Anda yang menginginkan pengalaman eksklusif dengan pelayanan premium. Kami menyediakan fasilitas terbaik agar momen liburan Anda menjadi lebih berkesan dan penuh ketenangan.
         </p>
     </div>
 

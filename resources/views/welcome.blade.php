@@ -58,8 +58,9 @@
         <div>
             <h2 class="text-2xl md:text-3xl font-bold text-white">Tentang Travel Kami</h2>
             <p class="text-white mt-4 leading-relaxed">
-                Semua Travel memberikan pengalaman liburan yang aman, nyaman, dan berkesan. 
-                Kami siap membantu perjalanan wisata, ziarah, keluarga, hingga bisnis.
+                Seraya Corp adalah penyedia layanan travel dan perjalanan wisata yang berkomitmen memberikan 
+                pengalaman liburan yang aman, nyaman, dan penuh kesan. 
+                Kami melayani berbagai kebutuhan perjalanan, mulai dari wisata alam, wisata keluarga, open trip, private trip, hingga paket dokumentasi wedding.
             </p>
         </div>
 

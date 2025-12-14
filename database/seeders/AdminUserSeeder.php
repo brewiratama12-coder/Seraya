@@ -2,36 +2,34 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Schema;
 
-class DatabaseSeeder extends Seeder
+class AdminUserSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // Create admin user
         if (!DB::table('users')->where('email', 'admin@example.com')->exists()) {
-            DB::table('users')->insert([
+            $data = [
                 'username' => 'admin',
                 'nama_lengkap' => 'Administrator',
                 'email' => 'admin@example.com',
-                'no_hp' => '081234567890',
+                'no_hp' => '081111111111',
                 'password' => Hash::make('admin123'),
                 'email_verified_at' => now(),
-                'role' => 'admin',
                 'remember_token' => Str::random(10),
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]);
+            ];
+
+            if (Schema::hasColumn('users', 'role')) {
+                $data['role'] = 'admin';
+            }
+
+            DB::table('users')->insert($data);
         }
     }
 }

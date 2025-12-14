@@ -1,33 +1,13 @@
 @extends('layouts.admin')
 
+@section('page_title', 'Dashboard')
 @section('title', 'Dashboard Admin')
 
 @section('content')
-<div class="p-6">
 
-    <h1 class="text-2xl font-bold mb-6">Dashboard Admin</h1>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Total Produk -->
-        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow">
-            <h2 class="text-lg font-semibold">Total Produk</h2>
-            <p class="text-3xl font-bold mt-2">{{ $totalProduk }}</p>
-        </div>
-
-        <!-- Total Pesanan -->
-        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow">
-            <h2 class="text-lg font-semibold">Total Pesanan</h2>
-            <p class="text-3xl font-bold mt-2">{{ $totalBooking }}</p>
-        </div>
-
-        <!-- Pembayaran Menunggu Verifikasi -->
-        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow">
-            <h2 class="text-lg font-semibold">Menunggu Verifikasi</h2>
-            <p class="text-3xl font-bold mt-2">{{ $menungguVerifikasi }}</p>
-        </div>
-
-    </div>
-
+<div class="bg-white dark:bg-[#0f172a] rounded-xl p-8 shadow text-center">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Selamat Datang di Dashboard Admin</h2>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Gunakan menu di samping untuk mengelola paket wisata dan pesanan Anda.</p>
 </div>
+
 @endsection
