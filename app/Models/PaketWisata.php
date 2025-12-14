@@ -12,6 +12,7 @@ class PaketWisata extends Model
         'nama_paket',
         'deskripsi',
         'harga',
+        'harga_asli',
         'jenis_paket',
         'status',
         'gambar',
@@ -19,5 +20,6 @@ class PaketWisata extends Model
 
     protected $casts = [
         'harga' => 'decimal:2',
+        'harga_asli' => 'decimal:2',
     ];
 }

@@ -5,13 +5,13 @@
 
 @section('content')
 
-<div class="bg-white dark:bg-[#0f172a] rounded-xl p-6 shadow">
+<div class="bg-white rounded-xl p-6 shadow">
     <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl font-bold text-gray-900 dark:text-white">Daftar Paket</h2>
+        <h2 class="text-xl font-bold text-black">Daftar Paket</h2>
         <div class="flex items-center gap-4">
             <form method="GET" action="{{ route('admin.paket.index') }}">
                 <input name="q" value="{{ $q ?? '' }}" placeholder="Cari paket..." class="px-3 py-2 border rounded-lg" />
-                <button class="ml-2 px-3 py-2 bg-blue-600 text-white rounded">Cari</button>
+                <button class="ml-2 px-3 py-2 bg-[#213555] hover:bg-[#1b2f4a] text-white rounded">Cari</button>
             </form>
         </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="overflow-x-auto">
         <table class="w-full text-sm">
             <thead>
-                <tr class="border-b dark:border-gray-700 text-left">
+                <tr class="border-b text-left">
                     <th class="px-4 py-3">ID</th>
                     <th class="px-4 py-3">Nama Paket</th>
                     <th class="px-4 py-3">Harga</th>
@@ -29,7 +29,7 @@
             </thead>
             <tbody>
                 @foreach($pakets as $p)
-                <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#334155]">
+                <tr class="border-b hover:bg-gray-50">
                     <td class="px-4 py-3">{{ $p->id }}</td>
                     <td class="px-4 py-3 flex items-center gap-3">
                         @if($p->gambar)
@@ -38,14 +38,14 @@
                             <div class="w-12 h-12 bg-gray-100 rounded"></div>
                         @endif
                         <div>
-                            <div class="font-medium text-gray-900 dark:text-white">{{ $p->nama_paket }}</div>
-                            <div class="text-xs text-gray-500">{{ Str::limit($p->deskripsi, 60) }}</div>
+                            <div class="font-medium text-black">{{ $p->nama_paket }}</div>
+                            <div class="text-sm text-black leading-relaxed">{{ $p->deskripsi }}</div>
                         </div>
                     </td>
                     <td class="px-4 py-3">Rp {{ number_format($p->harga, 0, ',', '.') }}</td>
                     <td class="px-4 py-3">{{ $p->status }}</td>
                     <td class="px-4 py-3">
-                        <a href="{{ route('admin.paket.edit', $p->id) }}" class="px-3 py-1 bg-blue-600 text-white rounded">Edit</a>
+                        <a href="{{ route('admin.paket.edit', $p->id) }}" class="px-3 py-1 bg-[#213555] hover:bg-[#1b2f4a] text-white rounded">Edit</a>
                     </td>
                 </tr>
                 @endforeach

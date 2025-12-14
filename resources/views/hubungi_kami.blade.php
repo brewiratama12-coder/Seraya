@@ -9,7 +9,7 @@
     <!-- Header -->
     <header class="mb-8 text-center">
         <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white">
-            Halo! Ada yang bisa dibantu? 👋
+            Halo! Ada yang bisa dibantu? 
         </h1>
 
         <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -118,7 +118,7 @@
 
             <div class="bg-white dark:bg-slate-800 rounded-2xl shadow p-6">
                 <h2 class="text-2xl font-bold dark:text-white">
-                    Kirim pesan ke tim Seraya - santai aja 😉
+                    Kirim pesan ke tim Seraya - santai aja 
                 </h2>
 
                 <p class="text-gray-600 dark:text-gray-400 mt-1">
@@ -173,7 +173,7 @@
                         </div>
 
                         <button type="submit"
-                                class="ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition">
+                                class="ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#213555] text-white hover:bg-[#1b2f4a] transition">
                             Kirim Pesan
                         </button>
                     </div>

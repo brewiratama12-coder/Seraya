@@ -28,6 +28,12 @@ Route::middleware(['auth'])->group(function () {
             ->middleware(\App\Http\Middleware\IsAdmin::class);
         
         // Halaman verifikasi pembayaran dihapus; verifikasi dilakukan dari pesanan
+        Route::post('/admin/permintaan/{id}/accept', [DashboardController::class, 'acceptOrder'])
+            ->name('admin.permintaan.accept')
+            ->middleware(\App\Http\Middleware\IsAdmin::class);
+        Route::post('/admin/permintaan/{id}/reject', [DashboardController::class, 'rejectOrder'])
+            ->name('admin.permintaan.reject')
+            ->middleware(\App\Http\Middleware\IsAdmin::class);
 
         // Admin: permintaan status update
         Route::patch('/admin/permintaan/{id}/status', [\App\Http\Controllers\PermintaanController::class, 'updateStatus'])
@@ -37,9 +43,7 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::get('/paket-wisata', function () {
-    return view('paket_wisata');
-})->name('paket_wisata');
+Route::get('/paket-wisata', [PaketController::class, 'publicIndex'])->name('paket_wisata');
 
 Route::get('/login', function () {
     return view('auth.login');

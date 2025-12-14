@@ -128,33 +128,37 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function verifyPembayaran(int $id)
+    public function acceptOrder(int $permintaanId)
     {
         if (Schema::hasTable('pembayaran')) {
-            DB::table('pembayaran')
-                ->where('id', $id)
-                ->update([
-                    'status_pembayaran' => 'lunas',
-                    'tanggal' => Carbon::now()->toDateString(),
-                    'updated_at' => Carbon::now(),
-                ]);
+            $pembayaran = DB::table('pembayaran')->where('permintaan_id', $permintaanId)->first();
+            if ($pembayaran) {
+                DB::table('pembayaran')
+                    ->where('id', $pembayaran->id)
+                    ->update([
+                        'status_pembayaran' => 'lunas',
+                        'tanggal' => Carbon::now()->toDateString(),
+                        'updated_at' => Carbon::now(),
+                    ]);
+            }
         }
-
-        return redirect()->route('admin.pembayaran.index')->with('status', 'Pembayaran diverifikasi.');
+        return redirect()->route('admin.pesanan')->with('status', 'Pesanan diterima (pembayaran ditandai lunas).');
     }
 
-    public function rejectPembayaran(int $id)
+    public function rejectOrder(int $permintaanId)
     {
         if (Schema::hasTable('pembayaran')) {
-            DB::table('pembayaran')
-                ->where('id', $id)
-                ->update([
-                    'status_pembayaran' => 'gagal',
-                    'updated_at' => Carbon::now(),
-                ]);
+            $pembayaran = DB::table('pembayaran')->where('permintaan_id', $permintaanId)->first();
+            if ($pembayaran) {
+                DB::table('pembayaran')
+                    ->where('id', $pembayaran->id)
+                    ->update([
+                        'status_pembayaran' => 'gagal',
+                        'updated_at' => Carbon::now(),
+                    ]);
+            }
         }
-
-        return redirect()->route('admin.pembayaran.index')->with('status', 'Pembayaran ditolak.');
+        return redirect()->route('admin.pesanan')->with('status', 'Pesanan ditolak (pembayaran ditandai gagal).');
     }
 
     /**

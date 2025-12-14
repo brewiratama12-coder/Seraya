@@ -121,25 +121,25 @@
 
     <div class="flex items-center justify-between mb-8">
         <h2 class="text-xl md:text-2xl font-bold dark:text-white">Pilihan Paket</h2>
-        <a href="#" class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-300">See all</a>
+        <a href="{{ route('paket_wisata') }}" class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-300">See all</a>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
         @foreach ([
-            ['paket1.jpg', 'Paket Open Trip'],
-            ['paket2.jpg', 'Paket Private Trip'],
-            ['paket3.jpg', 'Paket Wedding']
+            ['paket1.jpg', 'Paket Open Trip', route('detail_open')],
+            ['paket2.jpg', 'Paket Private Trip', route('detail_private')],
+            ['paket3.jpg', 'Paket Wedding', route('detail_wedding')],
         ] as $p)
 
-        <div class="border dark:border-gray-700 rounded-xl p-4 hover:shadow-lg dark:hover:shadow-gray-700/30 transition cursor-pointer bg-white dark:bg-[#1e293b]">
+        <a href="{{ $p[2] }}" class="border dark:border-gray-700 rounded-xl p-4 hover:shadow-lg dark:hover:shadow-gray-700/30 transition cursor-pointer bg-white dark:bg-[#1e293b] block">
             <img src="/image/{{ $p[0] }}" class="w-full h-48 object-cover rounded-lg">
             <h3 class="mt-3 font-semibold dark:text-white">{{ $p[1] }}</h3>
             <div class="flex justify-between mt-1 text-xs text-gray-500 dark:text-gray-400">
                 <span>4.9 (300+)</span>
                 <span>Rp. 350.000</span>
             </div>
-        </div>
+        </a>
 
         @endforeach
 
